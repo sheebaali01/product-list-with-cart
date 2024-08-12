@@ -11,10 +11,9 @@ function DessertItem({
   const { image, name, category, price } = dessert;
   return (
     <div className="dessert-item">
-      <div className="dessert-img">
-        <img src={image.thumbnail} alt={name} />
-
         {cartItem && cartItem.quantity > 0 ? (
+      <div className="dessert-img in-cart">
+        <img src={image.thumbnail} alt={name} />
           <button
             style={{
               backgroundColor: "hsl(14, 86%, 42%)",
@@ -59,14 +58,17 @@ function DessertItem({
               />
             </span>
           </button>
+          </div>
         ) : (
           // </div>
-          <button onClick={() => onAddToCart(dessert)}>
-            <img src="../assets/images/icon-add-to-cart.svg" alt="" />
-            Add to Cart
-          </button>
+          <div className="dessert-img">
+            <img src={image.thumbnail} alt={name} />
+            <button onClick={() => onAddToCart(dessert)}>
+              <img src="../assets/images/icon-add-to-cart.svg" alt="" />
+              Add to Cart
+            </button>
+          </div>
         )}
-      </div>
       <div className="dessert-data">
         <p>{category}</p>
         <h3>{name}</h3>

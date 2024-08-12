@@ -105,6 +105,11 @@ h3{
 .dessert-data h3 {
     margin: 7px 0; /* Add space above and below the heading */   
 }
+
+.in-cart {
+  border:3px solid hsl(14, 86%, 42%);
+  border-radius: 10px;
+}
 .cart {
     width: 300px;
     background-color: #fff;
@@ -278,8 +283,12 @@ h3{
     justify-content: space-around;
     align-items: center;
   }
-  
-  @media screen and (max-width: 375px) {
+  @media only screen and (max-width: 768px) {
+    .dessert-row{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media only screen and (max-width: 375px) {
     .main{
       padding: 30px;
       grid-template-columns: repeat(1, 1fr);
@@ -288,6 +297,5 @@ h3{
       grid-template-columns: repeat(1, 1fr);
     }
   }
-
   
   
